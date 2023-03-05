@@ -32,6 +32,8 @@
 		57FBDC5729B405FA00B2FC3C /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FBDC5629B405FA00B2FC3C /* ItemCell.swift */; };
 		57FBDC5929B4060C00B2FC3C /* ItemCellAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FBDC5829B4060C00B2FC3C /* ItemCellAdapter.swift */; };
 		57FBDC5B29B4081000B2FC3C /* ItemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FBDC5A29B4081000B2FC3C /* ItemHeaderView.swift */; };
+		57FBDC5D29B4163E00B2FC3C /* SpacingSectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FBDC5C29B4163E00B2FC3C /* SpacingSectionAdapter.swift */; };
+		57FBDC6229B4167F00B2FC3C /* SpacingCellAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FBDC6129B4167F00B2FC3C /* SpacingCellAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		57FBDC5629B405FA00B2FC3C /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		57FBDC5829B4060C00B2FC3C /* ItemCellAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellAdapter.swift; sourceTree = "<group>"; };
 		57FBDC5A29B4081000B2FC3C /* ItemHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemHeaderView.swift; sourceTree = "<group>"; };
+		57FBDC5C29B4163E00B2FC3C /* SpacingSectionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacingSectionAdapter.swift; sourceTree = "<group>"; };
+		57FBDC6129B4167F00B2FC3C /* SpacingCellAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacingCellAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 				57FBDC3929B3CF7900B2FC3C /* Section1Adapter.swift */,
 				57FBDC3B29B3CF9600B2FC3C /* Section2Adapter.swift */,
 				57FBDC3D29B3E1E600B2FC3C /* Section3Adapter.swift */,
+				57FBDC5C29B4163E00B2FC3C /* SpacingSectionAdapter.swift */,
 			);
 			path = SectionAdapters;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 			children = (
 				57FBDC5529B405EF00B2FC3C /* ItemCell */,
 				57FBDC4E29B3FD8000B2FC3C /* CauseCell */,
+				57FBDC5E29B4166600B2FC3C /* SpacingCell */,
 				57FBDC4D29B3FD7400B2FC3C /* ConfirmationRequiredCell */,
 			);
 			path = Cells;
@@ -187,6 +193,14 @@
 				57FBDC5829B4060C00B2FC3C /* ItemCellAdapter.swift */,
 			);
 			path = ItemCell;
+			sourceTree = "<group>";
+		};
+		57FBDC5E29B4166600B2FC3C /* SpacingCell */ = {
+			isa = PBXGroup;
+			children = (
+				57FBDC6129B4167F00B2FC3C /* SpacingCellAdapter.swift */,
+			);
+			path = SpacingCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +291,7 @@
 				57FBDC5929B4060C00B2FC3C /* ItemCellAdapter.swift in Sources */,
 				57FBDC1429B3C53400B2FC3C /* CompositionalLayout1View.swift in Sources */,
 				57FBDC5429B4049300B2FC3C /* CauseCellAdapter.swift in Sources */,
+				57FBDC5D29B4163E00B2FC3C /* SpacingSectionAdapter.swift in Sources */,
 				57FBDC5029B3FDA600B2FC3C /* CauseHeaderView.swift in Sources */,
 				57FBDC4529B3F06300B2FC3C /* ConfirmationRequiredCell.swift in Sources */,
 				57FBDC3E29B3E1E600B2FC3C /* Section3Adapter.swift in Sources */,
@@ -285,6 +300,7 @@
 				57FBDC1029B3C53400B2FC3C /* AppDelegate.swift in Sources */,
 				57FBDC5B29B4081000B2FC3C /* ItemHeaderView.swift in Sources */,
 				57FBDC4129B3EDFF00B2FC3C /* BackgroundView.swift in Sources */,
+				57FBDC6229B4167F00B2FC3C /* SpacingCellAdapter.swift in Sources */,
 				57FBDC3C29B3CF9600B2FC3C /* Section2Adapter.swift in Sources */,
 				57FBDC1229B3C53400B2FC3C /* SceneDelegate.swift in Sources */,
 				57FBDC4A29B3F31900B2FC3C /* ConfirmationRequiredCellAdapter.swift in Sources */,

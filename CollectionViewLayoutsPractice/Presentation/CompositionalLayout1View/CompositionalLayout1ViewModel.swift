@@ -46,6 +46,10 @@ class CompositionalLayout1ViewModel {
                 ]
             ),
             Section(
+                section: SpacingSectionAdapter(height: 16),
+                items: [SpacingCellAdapter()]
+            ),
+            Section(
                 section: Section3(sectionTitleData: "1"),
                 items: [
                     ItemCellAdapter(),

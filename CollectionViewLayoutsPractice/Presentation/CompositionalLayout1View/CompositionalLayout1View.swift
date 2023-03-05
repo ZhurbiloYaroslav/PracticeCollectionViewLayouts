@@ -20,7 +20,6 @@ class CompositionalLayout1View: UIViewController {
         collectionViewLayout: collectionViewLayout
     ).then {
         $0.backgroundColor = .lightGray
-        $0.delegate = self
     }
     
     private lazy var collectionViewLayout = UICollectionViewCompositionalLayout(sectionProvider: { [weak self] sectionIndex, environment -> NSCollectionLayoutSection? in
@@ -62,12 +61,6 @@ class CompositionalLayout1View: UIViewController {
             .disposed(by: disposeBag)
     }
 
-}
-
-extension CompositionalLayout1View: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        .init(top: 50, left: 0, bottom: 0, right: 0)
-    }
 }
 
 protocol SectionAdapterProtocol {

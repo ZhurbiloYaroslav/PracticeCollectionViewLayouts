@@ -56,7 +56,7 @@ struct Section2: SectionAdapterProtocol {
         )
         header.pinToVisibleBounds = true
         let background = NSCollectionLayoutDecorationItem.background(elementKind: backgroundViewKind)
-        background.contentInsets = NSDirectionalEdgeInsets(top: 58, leading: 8, bottom: 0, trailing: 8)
+        background.contentInsets = NSDirectionalEdgeInsets(top: 58, leading: 16, bottom: 0, trailing: 16)
         
         let section = NSCollectionLayoutSection(group: group)
         section.decorationItems = [background]

@@ -57,6 +57,7 @@ struct Section3: SectionAdapterProtocol {
             elementKind: headerViewKind,
             alignment: .top
         )
+        header.pinToVisibleBounds = true
         let background = NSCollectionLayoutDecorationItem.background(elementKind: backgroundViewKind)
         let section = NSCollectionLayoutSection(group: group)
         section.decorationItems = [background]
