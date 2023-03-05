@@ -11,7 +11,6 @@ import UIKit
 class CauseHeaderView: UICollectionReusableView {
     
     private let titleLabel = UILabel().then {
-        $0.text = "Cause"
         $0.textColor = .gray
     }
     
@@ -37,5 +36,9 @@ class CauseHeaderView: UICollectionReusableView {
         titleLabel.snp.makeConstraints { maker in
             maker.edges.equalToSuperview().inset(8)
         }
+    }
+    
+    func bind(viewModel: String) {
+        titleLabel.text = viewModel
     }
 }

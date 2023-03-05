@@ -12,43 +12,39 @@ import UIKit
 class ItemCell: UICollectionViewCell {
     
     private lazy var stackView = ItemCellHeaderContainer(
-        col1: titleLabel1,
-        col2: titleLabel2,
-        col3: titleLabel3,
-        col4: titleLabel4,
-        col5: titleLabel5
+        col1: titleLabelCode,
+        col2: titleLabelName,
+        col3: titleLabelColor,
+        col4: titleLabelSize,
+        col5: titleLabelQty
     )
     
-    private let titleLabel1 = UILabel().then {
-        $0.text = "41810"
+    private let titleLabelCode = UILabel().then {
         $0.textColor = .black
         $0.textAlignment = .center
         $0.numberOfLines = 1
     }
     
-    private let titleLabel2 = UILabel().then {
-        $0.text = "Some title"
+    private let titleLabelName = UILabel().then {
         $0.textColor = .black
         $0.textAlignment = .left
-        $0.numberOfLines = 1
+        $0.numberOfLines = 5
+        $0.setContentHuggingPriority(.defaultLow, for: .vertical)
     }
     
-    private let titleLabel3 = UILabel().then {
-        $0.text = "44"
+    private let titleLabelColor = UILabel().then {
         $0.textColor = .black
         $0.textAlignment = .center
         $0.numberOfLines = 1
     }
     
-    private let titleLabel4 = UILabel().then {
-        $0.text = "004"
+    private let titleLabelSize = UILabel().then {
         $0.textColor = .black
         $0.textAlignment = .center
         $0.numberOfLines = 1
     }
     
-    private let titleLabel5 = UILabel().then {
-        $0.text = "99"
+    private let titleLabelQty = UILabel().then {
         $0.textColor = .black
         $0.textAlignment = .center
         $0.numberOfLines = 1
@@ -76,9 +72,21 @@ class ItemCell: UICollectionViewCell {
         }
     }
     
-    func bind(viewModel: String) {
-        // TODO: Implement it
+    func bind(viewModel: ItemCellModel) {
+        titleLabelCode.text = viewModel.code
+        titleLabelName.text = viewModel.name
+        titleLabelColor.text = viewModel.color
+        titleLabelSize.text = viewModel.size
+        titleLabelQty.text = viewModel.quantity
     }
+}
+
+struct ItemCellModel {
+    let code: String
+    let name: String
+    let color: String
+    let size: String
+    let quantity: String
 }
 
 class ItemCellHeaderContainer: UIStackView {

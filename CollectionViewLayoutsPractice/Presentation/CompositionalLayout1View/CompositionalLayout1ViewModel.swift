@@ -23,55 +23,33 @@ class CompositionalLayout1ViewModel {
 
         let sectionAdaptersRaw: [Section] = [
             Section(
-                section: Section1(sectionTitleData: "1"),
+                section: SectionConfirmAdapter(),
                 items: [
                     ConfirmationRequiredCellAdapter()
                 ]
             ),
             Section(
-                section: Section2(sectionTitleData: "2"),
-                items: [
-                    CauseCellAdapter(),
-                    CauseCellAdapter(),
-                    CauseCellAdapter(),
-                    CauseCellAdapter(),
-                    CauseCellAdapter(),
-                    CauseCellAdapter(),
-                    CauseCellAdapter(),
-                    CauseCellAdapter(),
-                    CauseCellAdapter(),
-                    CauseCellAdapter(),
-                    CauseCellAdapter(),
-                    CauseCellAdapter(),
-                ]
+                section: SectionCauseAdapter(sectionHeader: "Cause"),
+                items: (0...15).reduce(into: [CauseCellAdapter](), { partialResult, number in
+                    partialResult.append(CauseCellAdapter(title: "Cause \(number)"))
+                })
             ),
             Section(
-                section: SpacingSectionAdapter(height: 16),
+                section: SectionSpacingAdapter(height: 16),
                 items: [SpacingCellAdapter()]
             ),
             Section(
-                section: Section3(sectionTitleData: "1"),
-                items: [
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                    ItemCellAdapter(),
-                ]
+                section: SectionItemsAdapter(),
+                items: (0...200).reduce(into: [CauseCellAdapter](), { partialResult, number in
+                    let viewModel = ItemCellModel(
+                        code: String(describing: Int.random(in: (0...999))),
+                        name: .random(of: 200),
+                        color: "99",
+                        size: "99",
+                        quantity: "99"
+                     )
+                    partialResult.append(ItemCellAdapter(viewModel: viewModel))
+                })
             ),
         ]
 
@@ -104,4 +82,11 @@ extension CompositionalLayout1ViewModel {
             self.items = items
         }
     }
+}
+
+extension String {
+   static func random(of n: Int) -> String {
+      let digits = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
+      return String(Array(0..<n).map { _ in digits.randomElement()! })
+   }
 }

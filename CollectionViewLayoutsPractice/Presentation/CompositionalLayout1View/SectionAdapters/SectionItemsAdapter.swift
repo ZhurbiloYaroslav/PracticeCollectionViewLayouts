@@ -1,5 +1,5 @@
 //
-//  Section2Adapter.swift
+//  SectionItemsAdapter.swift
 //  CollectionViewLayoutsPractice
 //
 //  Created by Yaroslav Zhurbilo on 04.03.2023.
@@ -7,12 +7,10 @@
 
 import UIKit
 
-struct Section2: SectionAdapterProtocol {
-    typealias HeaderViewType = CauseHeaderView
-    private let headerViewKind = "CauseHeaderView"
-    private let backgroundViewKind = "background1"
-
-    let sectionTitleData: String
+struct SectionItemsAdapter: SectionAdapterProtocol {
+    typealias HeaderViewType = ItemHeaderView
+    private let headerViewKind = "ItemHeaderView"
+    private let backgroundViewKind = "background2"
     
     func register(collectionView: UICollectionView?, layout: UICollectionViewCompositionalLayout?) {
         layout?.register(
@@ -27,27 +25,30 @@ struct Section2: SectionAdapterProtocol {
     }
 
     func getSectionFor(index: Int, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
-        /// Here we have a configguration for the second section/group/cells
+        /// Here we have a configguration for the third section/group/cells
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(1.0)
+            heightDimension: .estimated(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 16)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 1, trailing: 0)
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(50)
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(50)
         )
-        
-        let group = NSCollectionLayoutGroup.vertical(
+        let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
             subitems: [item]
         )
-        group.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: .flexible(0), top: nil, trailing: nil, bottom: nil)
-        
+        group.edgeSpacing = NSCollectionLayoutEdgeSpacing(
+            leading: .flexible(0),
+            top: nil,
+            trailing: nil,
+            bottom: nil
+        )
         let footerHeaderSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(50.0)
+            heightDimension: .estimated(50)
         )
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: footerHeaderSize,
@@ -56,12 +57,9 @@ struct Section2: SectionAdapterProtocol {
         )
         header.pinToVisibleBounds = true
         let background = NSCollectionLayoutDecorationItem.background(elementKind: backgroundViewKind)
-        background.contentInsets = NSDirectionalEdgeInsets(top: 58, leading: 16, bottom: 0, trailing: 16)
-        
         let section = NSCollectionLayoutSection(group: group)
         section.decorationItems = [background]
         section.boundarySupplementaryItems = [header]
-        section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0)
         return section
     }
     

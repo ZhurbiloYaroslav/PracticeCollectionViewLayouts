@@ -14,7 +14,7 @@ class CauseCell: UICollectionViewCell {
     private lazy var stackView = UIStackView(
         arrangedSubviews: [
             roundView,
-            titleLable
+            titleLabel
         ]).then {
             $0.axis = .horizontal
             $0.spacing = 8
@@ -28,8 +28,7 @@ class CauseCell: UICollectionViewCell {
         $0.clipsToBounds = true
     }
     
-    private let titleLable = UILabel().then {
-        $0.text = "Cause"
+    private let titleLabel = UILabel().then {
         $0.textColor = .black
         $0.numberOfLines = 1
     }
@@ -59,6 +58,6 @@ class CauseCell: UICollectionViewCell {
     }
     
     func bind(viewModel: String) {
-        // TODO: Implement it
+        titleLabel.text = viewModel
     }
 }

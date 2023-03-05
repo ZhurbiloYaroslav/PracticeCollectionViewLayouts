@@ -10,6 +10,7 @@ import UIKit
 struct ItemCellAdapter: CellAdapterProtocol {
     typealias CellType = ItemCell
     private let reuseIdentifier = String(describing: CellType.self)
+    let viewModel: ItemCellModel
     
     func register(collectionView: UICollectionView) {
         collectionView.register(CellType.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -18,7 +19,9 @@ struct ItemCellAdapter: CellAdapterProtocol {
     func getCell(indexPath: IndexPath, collectionView: UICollectionView) -> UICollectionViewCell {
         register(collectionView: collectionView)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        
+        if let cell = cell as? CellType {
+            cell.bind(viewModel: viewModel)
+        }
         return cell
     }
 }
