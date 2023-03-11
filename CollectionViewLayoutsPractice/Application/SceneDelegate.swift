@@ -16,8 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create Window
         let window = UIWindow(windowScene: windowScene)
         self.window = window
-        let viewController = CompositionalLayout1View()
-        viewController.bindViewModel()
+        let viewController = FlowLayoutLifecycleView()
         window.rootViewController = viewController
         window.makeKeyAndVisible()
     }

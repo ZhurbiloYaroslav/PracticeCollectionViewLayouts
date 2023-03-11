@@ -34,6 +34,9 @@
 		57FBDC5B29B4081000B2FC3C /* ItemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FBDC5A29B4081000B2FC3C /* ItemHeaderView.swift */; };
 		57FBDC5D29B4163E00B2FC3C /* SectionSpacingAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FBDC5C29B4163E00B2FC3C /* SectionSpacingAdapter.swift */; };
 		57FBDC6229B4167F00B2FC3C /* SpacingCellAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FBDC6129B4167F00B2FC3C /* SpacingCellAdapter.swift */; };
+		57FBDC6529B5221D00B2FC3C /* HierarchichalTreeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FBDC6429B5221D00B2FC3C /* HierarchichalTreeLayout.swift */; };
+		57FBDC6A29B8BB0D00B2FC3C /* FlowLayoutLifecycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FBDC6929B8BB0D00B2FC3C /* FlowLayoutLifecycleView.swift */; };
+		57FBDC6C29B8BFA600B2FC3C /* FlowLayoutLifecycleViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FBDC6B29B8BFA600B2FC3C /* FlowLayoutLifecycleViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,9 @@
 		57FBDC5A29B4081000B2FC3C /* ItemHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemHeaderView.swift; sourceTree = "<group>"; };
 		57FBDC5C29B4163E00B2FC3C /* SectionSpacingAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSpacingAdapter.swift; sourceTree = "<group>"; };
 		57FBDC6129B4167F00B2FC3C /* SpacingCellAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacingCellAdapter.swift; sourceTree = "<group>"; };
+		57FBDC6429B5221D00B2FC3C /* HierarchichalTreeLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchichalTreeLayout.swift; sourceTree = "<group>"; };
+		57FBDC6929B8BB0D00B2FC3C /* FlowLayoutLifecycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayoutLifecycleView.swift; sourceTree = "<group>"; };
+		57FBDC6B29B8BFA600B2FC3C /* FlowLayoutLifecycleViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayoutLifecycleViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,8 @@
 		57FBDC3329B3CDFB00B2FC3C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				57FBDC6629B8BAB300B2FC3C /* FlowLayoutLifecycle */,
+				57FBDC6329B521F400B2FC3C /* HierarchichalTreeLayout  */,
 				57FBDC3429B3CE1000B2FC3C /* CompositionalLayout1View */,
 			);
 			path = Presentation;
@@ -201,6 +209,23 @@
 				57FBDC6129B4167F00B2FC3C /* SpacingCellAdapter.swift */,
 			);
 			path = SpacingCell;
+			sourceTree = "<group>";
+		};
+		57FBDC6329B521F400B2FC3C /* HierarchichalTreeLayout  */ = {
+			isa = PBXGroup;
+			children = (
+				57FBDC6429B5221D00B2FC3C /* HierarchichalTreeLayout.swift */,
+			);
+			path = "HierarchichalTreeLayout ";
+			sourceTree = "<group>";
+		};
+		57FBDC6629B8BAB300B2FC3C /* FlowLayoutLifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				57FBDC6929B8BB0D00B2FC3C /* FlowLayoutLifecycleView.swift */,
+				57FBDC6B29B8BFA600B2FC3C /* FlowLayoutLifecycleViewLayout.swift */,
+			);
+			path = FlowLayoutLifecycle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57FBDC6529B5221D00B2FC3C /* HierarchichalTreeLayout.swift in Sources */,
 				57FBDC5929B4060C00B2FC3C /* ItemCellAdapter.swift in Sources */,
 				57FBDC1429B3C53400B2FC3C /* CompositionalLayout1View.swift in Sources */,
 				57FBDC5429B4049300B2FC3C /* CauseCellAdapter.swift in Sources */,
@@ -301,10 +327,12 @@
 				57FBDC5B29B4081000B2FC3C /* ItemHeaderView.swift in Sources */,
 				57FBDC4129B3EDFF00B2FC3C /* BackgroundView.swift in Sources */,
 				57FBDC6229B4167F00B2FC3C /* SpacingCellAdapter.swift in Sources */,
+				57FBDC6C29B8BFA600B2FC3C /* FlowLayoutLifecycleViewLayout.swift in Sources */,
 				57FBDC3C29B3CF9600B2FC3C /* SectionCauseAdapter.swift in Sources */,
 				57FBDC1229B3C53400B2FC3C /* SceneDelegate.swift in Sources */,
 				57FBDC4A29B3F31900B2FC3C /* ConfirmationRequiredCellAdapter.swift in Sources */,
 				57FBDC3A29B3CF7900B2FC3C /* SectionConfirmAdapter.swift in Sources */,
+				57FBDC6A29B8BB0D00B2FC3C /* FlowLayoutLifecycleView.swift in Sources */,
 				57FBDC5729B405FA00B2FC3C /* ItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
